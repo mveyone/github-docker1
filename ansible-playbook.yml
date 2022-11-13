@@ -1,0 +1,21 @@
+---
+- name: "build docker image"
+  hosts: localhost
+  tasks: 
+  - name: docker stop running container ansible-container
+    command: docker stop ansible-container
+    ignore_errors: yes
+
+  - name: docker remove ansible container
+    command: docker rm -f ansible-container 
+    ignore_errors: yes
+
+  - name: docker remove ansible image
+    command: docker rmi ansible-image
+    ignore_errors: yes
+
+  - name: docker build ansible image
+    command: docker build -t ansible-image .
+
+  - name: docker run ansible container
+    command: docker run -d --name ansible-container -p 8090 ansible-image
