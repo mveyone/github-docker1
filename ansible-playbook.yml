@@ -10,7 +10,7 @@
     command: docker rm -f ansible-container 
     ignore_errors: yes
 
-  - name: docker remove ansible image
+  - name: docker removing  ansible image
     command: docker rmi ansible-image
     ignore_errors: yes
 
