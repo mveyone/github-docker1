@@ -20,7 +20,14 @@
   - name: docker run ansible container
     command: docker run -d --name ansible-container -p 5001:80 ansible-image
 
-  - name: Log into DockerHub
+  - name: docker changing tag of container 
+    command: docker tag ansible-image mveyone/docker-image-autobuild
+
+  - name: docker push image to dockerhub
+    command: docker push mveyone/docker-image-autobuild
+
+  
+ # - name: Log into DockerHub
     docker_login:
     username: mveyone
     password: lukaku001
