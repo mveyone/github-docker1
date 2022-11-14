@@ -19,3 +19,6 @@
 
   - name: docker run ansible container
     command: docker run -d --name ansible-container -p 5001:80 ansible-image
+
+  - name: Push the Docker image
+    command: docker login -u mveyone -p ${{ secrets.DOCKER_TOKEN }} && docker push mveyone/docker-image-autobuild:latest
