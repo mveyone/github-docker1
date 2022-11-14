@@ -1,0 +1,5 @@
+git branch
+git checkout -b dev
+git push --set-upstream git@github.com:mveyone/exemple8.gitdev
+ok cool/
+

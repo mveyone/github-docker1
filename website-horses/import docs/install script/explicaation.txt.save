@@ -1,0 +1,8 @@
+//
+jenkins file pipelin automate all the next staff
+ansible push container p docker hub  
+terraform  build infra
+docker  build image 
+ 
+simple project 
+ 
