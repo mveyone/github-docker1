@@ -2,9 +2,10 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ master ]
+  workflow_dispatch:
 
 jobs:
 
@@ -13,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag mveyone/docker-image-autobuild:latest
+    - name: Push the Docker image
+      run: docker login -u mveyone -p ${{ secrets.DOCKER_TOKEN }} && docker push mveyone/docker-image-autobuild:latest
