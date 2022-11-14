@@ -20,11 +20,7 @@ pipeline {
         }
         stage('Second-Stage') {
             steps {
-              // Run mutliple commands
-              sh """
-              cd ${APPLICATION_DIR}
-              ansible-playbook playbook.yml
-              """
+              sh "ansible-playbook playbook.yml"
             }
         }
     }
