@@ -21,7 +21,7 @@
     command: docker run -d --name ansible-container -p 5001:80 ansible-image
 
   - name: docker changing tag of container 
-    command: docker tag ansible-image mveyone/docker-image-autobuild
+    command: docker tag ansible-image mveyone/docker-image-autobuild:latesto
 
   - name: docker push image to dockerhub
     command: docker push mveyone/docker-image-autobuild
