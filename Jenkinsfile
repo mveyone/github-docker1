@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Second-Stage') {
             steps {
-              sh "ansible-playbook playbook.yml"
+              sh "ansible-playbook ansible-playbook.yml"
             }
         }
     }
