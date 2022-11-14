@@ -27,11 +27,3 @@
     command: docker push mveyone/docker-image-autobuild
 
   
- # - name: Log into DockerHub
-    docker_login:
-    username: mveyone
-    password: lukaku001
-    email: docker@docker.io
-
-  - name: Push the Docker image
-    command: docker push mveyone/docker-image-autobuild:latest
